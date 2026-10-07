@@ -1,7 +1,7 @@
 # Login Magic Com (Rice Cooker)
 
 Formulir login interaktif bertema kehidupan sehari-hari, dibuat dengan React + Vite.
-Tekan tombol masak, lampu menyala, lalu form login muncul dari dalamnya, setelah login tutup ricecooker terbuka.
+Tekan tombol masak, lampu menyala, lalu form login muncul, setelah login tutup ricecooker terbuka.
 
 ## Cara menjalankan
 
