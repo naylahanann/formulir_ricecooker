@@ -1,0 +1,284 @@
+.kitchen {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  background: #FFF4F2;
+}
+
+/* Dinding dapur */
+.wall {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(234, 217, 217, 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 217, 217, 0.45) 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, #ffffff 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, #f8dfe5 0%, transparent 30%),
+    #fff4f2;
+  background-size: 40px 40px, 40px 40px, auto, auto, auto;
+}
+
+/* Meja dapur */
+.floor {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 130px;
+  height: clamp(70px, 14vh, 130px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+  background: #F3E5DC;
+  border-top: 8px solid #E8B9C5;
+}
+.counter-items {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 6px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+  .counter-items { display: none; }
+}
+
+/* Kartu form */
+.card {
+  position: relative;
+  width: 100%;
+  padding: 20px 18px 16px;
+  background: #FFF5F7;
+  color: #5A3E3E;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(90, 62, 62, 0.25);
+  animation: pop 0.6s 0.5s both;
+}
+@keyframes pop {
+  from { opacity: 0; transform: translateY(14px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.card h2 { font-size: 1.25rem; margin-bottom: 6px; }
+.sub { font-size: 0.8rem; opacity: 0.75; margin-bottom: 6px; }
+.welcome-text { line-height: 1.5; margin-bottom: 14px; }
+.card label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: bold;
+  margin: 8px 0 3px;
+}
+.card input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid #EBCAD3;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+.card input:focus { border-color: #D9829B; }
+.error { color: #B5485E; font-size: 0.78rem; margin-top: 8px; }
+
+.btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #D9829B;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+.btn:hover { background: #C7708A; }
+.btn:active { transform: scale(0.97); }
+.link {
+  display: block;
+  margin: 8px auto 0;
+  background: none;
+  border: none;
+  color: #A9677A;
+  font-size: 0.78rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Petunjuk di meja */
+.hint {
+  position: relative;
+  z-index: 2;
+  margin-top: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 244, 242, 0.9);
+  border: 1px solid #F0CBD4;
+  color: #5A3E3E;
+  font-weight: bold;
+  animation: pulse 1.8s infinite;
+}
+.hint:not(.small) {
+  background: #B58C98;
+  border-color: #B58C98;
+  color: #FFF8F2;
+}
+.hint.small { font-size: 0.8rem; opacity: 0.85; animation: none; }
+@keyframes pulse { 50% { opacity: 0.5; } }
+
+.shake { animation: shake 0.5s; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-7px); }
+  80% { transform: translateX(7px); }
+}
+
+/* ===== Magic com ===== */
+.cooker {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tempat kartu form (ruangnya selalu disediakan) */
+.card-slot {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+.card-slot .card { animation: rise-card 0.8s both; }
+@keyframes rise-card {
+  from { opacity: 0; transform: translateY(70px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Tutup */
+.lid {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  height: 90px;
+  margin-bottom: -10px;
+  border: 6px solid #AFC3CB;
+  border-radius: 150px 150px 14px 14px;
+  background: linear-gradient(135deg, #EAF4F7, #DCEBF0);
+  transform-origin: right bottom;
+  transition: transform 1s cubic-bezier(0.5, 0, 0.2, 1);
+}
+.lid.open { transform: rotate(-30deg) translateX(10px); }
+.lid.wobble { animation: wobble 0.4s infinite; }
+@keyframes wobble {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-2px) rotate(-0.6deg); }
+  75% { transform: translateY(-1px) rotate(0.6deg); }
+}
+.lid-knob {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 26px;
+  height: 14px;
+  margin-left: -13px;
+  border-radius: 14px 14px 4px 4px;
+  background: #D9829B;
+}
+
+/* Badan magic com */
+.pot {
+  position: relative;
+  z-index: 3;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 8px solid #AFC3CB;
+  border-radius: 20px 20px 46px 46px;
+  background: #DCEBF0;
+  box-shadow: 0 20px 40px rgba(90, 62, 62, 0.25);
+}
+.rice {
+  position: absolute;
+  top: -18px;
+  left: 12%;
+  width: 76%;
+  height: 34px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 50%, #e9e0cf 2px, transparent 3px),
+    radial-gradient(circle at 60% 40%, #e9e0cf 2px, transparent 3px),
+    #FFFDF7;
+  opacity: 0;
+  transition: opacity 0.6s 0.5s;
+}
+.rice.show { opacity: 1; }
+.plate {
+  padding: 3px 14px;
+  border-radius: 12px;
+  background: #FFF4F2;
+  color: #8FA9B3;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+}
+.controls { display: flex; gap: 10px; }
+.light {
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: #C9D6DB;
+  color: #8FA9B3;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.4s;
+}
+.light.cook.on { background: #D9829B; color: #fff; box-shadow: 0 0 12px #D9829B; }
+.light.warm.on { background: #F6C667; color: #5A3E3E; box-shadow: 0 0 12px #F6C667; }
+
+.cook-btn {
+  width: 110px;
+  padding: 9px 0;
+  border: none;
+  border-radius: 20px;
+  background: #D9829B;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #B96A82;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cook-btn:not(.pressed) { animation: ring 1.6s infinite; }
+.cook-btn.pressed {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #B96A82;
+  cursor: default;
+}
+@keyframes ring {
+  0% { outline: 0 solid rgba(217, 130, 155, 0.7); outline-offset: 0; }
+  100% { outline: 10px solid rgba(217, 130, 155, 0); outline-offset: 4px; }
+}
+
+@media (max-width: 480px) {
+  .cooker, .lid, .pot { width: 270px; }
+}

@@ -1,0 +1,11 @@
+/* File: src/index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background: #2b2f3a;
+}
