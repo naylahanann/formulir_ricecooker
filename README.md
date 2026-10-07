@@ -1,4 +1,4 @@
-# Kucing Login
+# Formulir_ricecooker
 Project login bertema rice cooker, dibuat dengan React + Vite.
 
 ## Link
