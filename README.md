@@ -14,8 +14,8 @@ Buka alamat yang muncul di terminal (biasanya http://localhost:5173).
 
 ## Akun demo
 
-- Username: `admin`
-- Password: `nasi123`
+- Username: `nayla`
+- Password: `laperya?`
 
 ## Struktur
 
