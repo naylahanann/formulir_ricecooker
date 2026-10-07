@@ -11,4 +11,4 @@ npm run dev
 
 ## Akun demo
 - Username: `nayla`
-- Password: `laperya?`
+- Password: `masaknasi`
